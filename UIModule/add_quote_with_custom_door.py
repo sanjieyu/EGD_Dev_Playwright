@@ -19,12 +19,9 @@ class Add_Quote_With_CustomDoor(Add_Custom_Door):
         self.find_quote_input = self.page.locator( '#search-quote')
         self.find_quote_btn = self.page.locator( '#search-btn')
 
-        self.searched_proposal_no_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div/div/div/table/tbody/tr/td[2]/a')
-        self.searched_door_no_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div/div/div/table/tbody/tr/td[7]/span')
-        self.searched_door_status_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div/div/div/table/tbody/tr/td[11]/span')
+        self.searched_proposal_no_loc = self.page.locator("[name='searchedid']")
+        self.searched_door_no_loc = self.page.locator("[name='doorid']")
+        self.searched_door_status_loc = self.page.locator("[name='doorstatus']")
 
     def add_custom_door_fun(self):
         self.add_quote.go_addquote()

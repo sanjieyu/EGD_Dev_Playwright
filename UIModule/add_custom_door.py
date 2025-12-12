@@ -14,10 +14,8 @@ class Add_Custom_Door(Custom_Door):
     def _init_locators_add_custom_door(self):
         self.new_door_page_loc = self.page.locator('#customDoorForm')
         self.new_door_title = self.page.locator('#btnShowDoor')
-        self.new_door_duplicate = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/fieldset/div/div/'
-                                                    'div[1]/div/div/div/div[3]/a[1]')
-        self.new_door_delete = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/fieldset/div/div/div[1]/'
-                                                 'div/div/div/div[3]/a[2]')
+        self.new_door_duplicate = self.page.locator("[aria-label='duplicate']")
+        self.new_door_delete = self.page.locator("[name='doordelete']")
 
         '''loc for validation'''
         self.validation_msgbox_loc = self.page.locator('#customErrorsBody')

@@ -13,21 +13,15 @@ class Account_Customer(Admin_Page):
 
     def _init_locators_account_customer(self):
         '''loc for default values in this page'''
-        self.account_title_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/h1')
-        self.account_searchbtn_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/form/div/div/span/button')
+        self.account_title_loc = self.page.locator("[data-test='login-submit']")
+        self.account_searchbtn_loc = self.page.locator(".btn.btn-search")
         self.account_searchbox_loc = self.page.locator('#searchCustomerName')    #this is for ID
-        self.customer_name_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/div/div/'
-                                                   'table/thead/tr/th[1]/div/span')
-        self.contact_name_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/div/div/'
-                                                  'table/thead/tr/th[2]/div/span')
-        self.address_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/div/div/table/'
-                                             'thead/tr/th[3]/div/span')
-        self.email_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/div/div/table/'
-                                           'thead/tr/th[4]/div/span')
-        self.suburb_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/div/div/table/'
-                                            'thead/tr/th[5]/div/span')
-        self.search_result_name_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div[2]/div/'
-                                                        'div/table/tbody/tr/td[1]/a')
+        self.customer_name_loc = self.page.locator('#customername)
+        self.contact_name_loc = self.page.locator("xpath=//div[contains(@class,'cname')]")
+        self.address_loc = self.page.locator("[name='address']")
+        self.email_loc = self.page.locator("[name='email']")
+        self.suburb_loc = self.page.locator("[name='uburb']")
+        self.search_result_name_loc = self.page.locator('#searchCustomerResult)
 
     def goto_account_customer(self):
         '''Go to account customer screen'''

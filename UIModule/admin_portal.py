@@ -13,60 +13,58 @@ class Admin_Page(Admin_Portal):
         self._init_locators()
 
     def _init_locators(self):
+
         '''loc for default values in this page'''
         self.eco_icon_loc = self.page.locator('xpath=/html/body/div[2]/div/div[1]/a/img')
         self.add_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[1]/a')
         self.list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/a')
         self.findquote_box_loc = self.page.locator('#search-quote')
-        self.findquote_button_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/div[1]/div/div/button')
+        self.findquote_button_loc = self.page.locator('#btnFindQuote')
         self.findaddress_box_loc = self.page.locator('#search-address')
-        self.findaddress_button_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/div[2]/div/div/button')
+        self.findaddress_button_loc = self.page.locator('#btnFindAddress')
         self.findclient_box_loc = self.page.locator('#search-client')
-        self.findclient_button_loc = self.page.locator('xpath=//*[@id="search-client-btn"]')
-        self.account_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/a')
-        self.copyright_loc = self.page.locator('xpath=/html/body/footer/div/p')
-        self.terms_loc = self.page.locator('xpath=/html/body/footer/div/a')
+        self.findclient_button_loc = self.page.locator('#btnFindClient')
+        self.account_loc = self.page.locator("[aria-label='account']")
+        self.copyright_loc = self.page.locator("[aria-label='copyright']")
+        self.terms_loc = self.page.locator("[aria-label='terms']")
 
         # 保存选择器字符串用于 wait_for_selector
         self.copyright_selector = 'xpath=/html/body/footer/div/p'
 
         '''Add Menu'''
-        self.quote_add_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[1]/ul/li[1]/a')
-        self.lead_add_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[1]/ul/li[2]/a')
-        self.account_add_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[1]/ul/li[3]/a')
-        self.installer_add_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[1]/ul/li[4]/a')
+        self.quote_add_loc = self.page.locator("[aria-label='quote_add']")
+        self.lead_add_loc = self.page.locator("[aria-label='lead_add']")
+        self.account_add_loc = self.page.locator("[aria-label='account_add']")
+        self.installer_add_loc = self.page.locator("[aria-label='installer_add']")
 
         '''List Menu'''
-        self.quote_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[1]/a')
-        self.services_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[2]/a')
-        self.account_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[3]/a')
-        self.report_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[4]/a')
-        self.installer_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[5]/a')
-        self.myob_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[6]/a')
-        self.jobaccept_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[7]/a')
-        self.onhold_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[8]/a')
-        self.neworder_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[9]/a')
-        self.production_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[10]/a')
-        self.productionWA_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[11]/a')
-        self.schedule_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[12]/a')
-        self.pipeline_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[13]/a')
-        self.activepipeline_list_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[14]/a')
+        self.quote_list_loc = self.page.locator('#quotelist')
+        self.services_list_loc = self.page.locator('#servicelist')
+        self.account_list_loc = self.page.locator('#accountlist')
+        self.report_list_loc = self.page.locator('#reportlist')
+        self.installer_list_loc = self.page.locator('#installerlist')
+        self.myob_list_loc = self.page.locator('#myoblist')
+        self.jobaccept_list_loc = self.page.locator('#jobacceptlist')
+        self.onhold_list_loc = self.page.locator('#onholdlist')
+        self.neworder_list_loc = self.page.locator('#neworderlist')
+        self.production_list_loc = self.page.locator('#productionlist')
+        self.productionWA_list_loc = self.page.locator('#walist')
+        self.schedule_list_loc = self.page.locator('#schedulelist')
+        self.pipeline_list_loc = self.page.locator('#pipelinelist')
+        self.activepipeline_list_loc = self.page.locator('#activepipelinelist')
 
         '''Account Menu'''
-        self.changepwd_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[3]/a')
-        self.updateprofile_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[4]/a')
-        self.updateemail_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[5]/a')
-        self.usermanage_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[7]/a')
-        self.travel_area_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[9]/a')
-        self.rollcycle_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[10]/a')
-        self.rollcycle_panellift_loc = self.page.locator(
-            'xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[10]/ul/li[1]/a')
-        self.rollcycle_rollerdoors_loc = self.page.locator(
-            'xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[10]/ul/li[2]/a')
-        self.rollcycle_optiliftdoors_loc = self.page.locator(
-            'xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[10]/ul/li[3]/a')
-        self.sms_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[11]/a')
-        self.logoff_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/form/ul/li/ul/li[13]/a')
+        self.changepwd_loc = self.page.locator('#pwdchange')
+        self.updateprofile_loc = self.page.locator('#profileupdate')
+        self.updateemail_loc = self.page.locator('#emailupdate')
+        self.usermanage_loc = self.page.locator('#usermanager')
+        self.travel_area_loc = self.page.locator('#travelarea')
+        self.rollcycle_loc = self.page.locator('#rollcyclepanel')
+        self.rollcycle_panellift_loc = self.page.locator('#rollcycleroll')
+        self.rollcycle_rollerdoors_loc = self.page.locator('#rollcycleoptilift'')
+        self.rollcycle_optiliftdoors_loc = self.page.locator('#rollcycleoptiroll'')
+        self.sms_loc = self.page.locator('#sms')
+        self.logoff_loc = self.page.locator('#logoff')
 
 
     @property

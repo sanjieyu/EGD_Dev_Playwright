@@ -15,197 +15,129 @@ class Standard_Door(Add_Quote):
         self.standard_door_menu = self.page.locator('#add-door-btn')
         self.add_standarddoor_btn = self.page.locator('#btnDoorAdd')
         self.close_standarddoor_btn = self.page.locator('#btnDoorClose')
-        self.close_standarddoor_btn1 = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/'
-                                                         'div[2]/div[3]')
-        self.door_main_page = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form')
+        self.door_main_page = self.page.locator('xpath=//*[@id="main"]/div/span')
 
         '''loc for each element for install details'''
-        self.title_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/h1')
-        self.storage_bay_no_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/'
-                                                     'div[1]/div[4]/label')
-        self.unit_no_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[2]/'
-                                             'div[1]/label')
+        self.title_loc = self.page.locator("[name='QuoteTitle']")
+        self.storage_bay_no_loc = self.page.locator("[name='StorageBay']")
+        self.unit_no_loc = self.page.locator("[name='UnitNum']")
         self.unit_no_inputbox = self.page.locator('#UnitNumber')
-        self.packaging_type_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/'
-                                                    'div[2]/div[3]/label')
+        self.packaging_type_loc = self.page.locator("[name='PackagingType']")
         self.packaging_type_select = self.page.locator('#PackagingType')
-
-        self.install_type_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[1]/fieldset/label')
-        self.install_type_select = self.page.locator( '#InstallTypeStandard')
-        self.door_type_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[2]/fieldset/label')
+        self.install_type_loc = self.page.locator("[name='InstallTypeStandardEdit']")
+        self.install_type_select = self.page.locator('#InstallTypeStandard')
+        self.door_type_loc = self.page.locator("[name='DoorTypeEdit']")
         self.door_type_select = self.page.locator('#DoorType')
-        self.design_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                            'div[3]/fieldset/label')
+        self.design_loc = self.page.locator("[name='DesignEdit']")
         self.design_select = self.page.locator( '#Door_Design')
-        self.colour_category_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[4]/fieldset/label')
-        self.colour_category_select = self.page.locator( '#Door_Color_Category')
-        self.door_colour_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[5]/fieldset/label')
-        self.door_colour_select = self.page.locator( '#DoorColor')
-        self.door_finish_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[6]/fieldset/label')
-        self.door_finish_select = self.page.locator( '#DoorFinish')
-        self.custom_colour_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[7]/fieldset/label')
-        self.custom_colour_inputbox = self.page.locator( '#Door_Custom_Color')
-        self.tech_measure_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[8]/fieldset/div/label')
-        self.measure_require_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[9]/fieldset/div/label')
+        self.colour_category_loc = self.page.locator("[name='CategoryEdit']")
+        self.colour_category_select = self.page.locator('#Door_Color_Category')
+        self.door_colour_loc = self.page.locator("[name='ColorEdit']")
+        self.door_colour_select = self.page.locator('#DoorColor')
+        self.door_finish_loc = self.page.locator(("[name='FinishEdit']")
+        self.door_finish_select = self.page.locator('#DoorFinish')
+        self.custom_colour_loc = self.page.locator("[name='CustomColorEdit']")
+        self.custom_colour_inputbox = self.page.locator('#Door_Custom_Color')
+        self.tech_measure_loc = self.page.locator("[name='TechEdit']")
+        self.measure_require_loc = self.page.locator("[name='MeasureEdit']")
 
         '''loc for each element for SIZE details'''
-        self.opensize_lh_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[12]/fieldset/label')
+        self.opensize_lh_loc = self.page.locator("[name='OpeningSizeLHEdit']")
         self.opensize_lh_select = self.page.locator('#OpeningSizeLH')
-        self.opensize_rh_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[13]/fieldset/label')
-        self.opensize_rh_select = self.page.locator( '#OpeningSizeRH')
-        self.opensize_width_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[14]/fieldset/label')
-        self.opensize_width_select = self.page.locator( '#OpeningSizeWidth')
-        self.sr_left_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[15]/fieldset/label')
-        self.sr_left_select = self.page.locator( '#SR_left')
-        self.hr_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                        'div[16]/fieldset/label')
-        self.hr_select = self.page.locator( '#HR')
-        self.sr_right_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[17]/fieldset/label')
-        self.sr_right_select = self.page.locator( '#SR_right')
-        self.lhrk_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                           'div[18]/div/div[1]/label')
-
-        self.lhrk_select = self.page.locator( '#LHRK')
-        self.sms_bracket_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/fieldset/div[2]/div[3]/label')
-        self.lsr_kit_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/fieldset/div[3]/div[3]/label')
-
-        self.timber_packers_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/'
-                                                    'div[4]/div[19]/label')
+        self.opensize_rh_loc = self.page.locator("[name='OpeningSizeRHEdit']")
+        self.opensize_rh_select = self.page.locator('#OpeningSizeRH')
+        self.opensize_width_loc = self.page.locator("[name='OpeningSizeWidthEdit']")
+        self.opensize_width_select = self.page.locator('#OpeningSizeWidth')
+        self.sr_left_loc = self.page.locator("[name='SRLeftEdit']")
+        self.sr_left_select = self.page.locator('#SR_left')
+        self.hr_loc = self.page.locator("[name='HREdit']")
+        self.hr_select = self.page.locator('#HR')
+        self.sr_right_loc = self.page.locator("[name='SRRightEdit']")
+        self.sr_right_select = self.page.locator('#SR_right')
+        self.lhrk_loc = self.page.locator("[name='LHRKEdit']")
+        self.lhrk_select = self.page.locator('#LHRK')
+        self.sms_bracket_loc = self.page.locator("[name='SMSEdit']")
+        self.lsr_kit_loc = self.page.locator("[name='LsrEdit']")
+        self.timber_packers_loc = self.page.locator("[name='TimberPackersEdit']")
         self.timber_packers_select = self.page.locator('#TimberPackers')
-        self.taper_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                           'div[20]/fieldset/label')
-        self.taper_select = self.page.locator( '#Taper')
-        self.additional_fabrication_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[22]/fieldset/label')
-        self.additional_fabrication_select = self.page.locator( '#HeavyAngle')
-        self.additional_fabrication_required_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[23]/fieldset/label')
-        self.additional_fabrication_required_inputbox = self.page.locator( '#HeavyAngleDetails')
-        self.shop_drawings_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[24]/fieldset/label')
-        self.shop_drawings_select = self.page.locator( '#ShopDrawings')
-        self.lifting_equipment_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[25]/div/div/fieldset/label')
-        self.lifting_equipment_btn = self.page.locator('xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/'
-                                                       'div[1]/div[4]/div[25]/'
-                                      'div/div/fieldset/span/div/button')
+        self.taper_loc = self.page.locator("[name='TapeEdit']")
+        self.taper_select = self.page.locator('#Taper')
+        self.additional_fabrication_loc = self.page.locator("[name='HeavyAngleEdit']")
+        self.additional_fabrication_required_loc = self.page.locator("[name='HeavyAngleDetailsEdit']")
+        self.additional_fabrication_required_inputbox = self.page.locator('#HeavyAngleDetails')
+        self.shop_drawings_loc = self.page.locator("[name='ShopDrawingsEdit']")
+        self.shop_drawings_select = self.page.locator('#ShopDrawings')
+        self.lifting_equipment_loc = self.page.locator("[name='LiftEdit']")
+        self.lifting_equipment_btn = self.page.locator("#btnLift")
 
         '''loc for each element for checkboxes details'''
-        self.induction_loop_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/div/div[1]/fieldset[1]/div/label')
+        self.induction_loop_loc = self.page.locator('xpath=//*[@id="induction"]/div/div[1]')
         self.induction_loop_box_loc = self.page.locator( '#IsInductionLoopStandard')
-        self.fully_sloctted_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/div/div[3]/fieldset[1]/div/label')
+        self.fully_sloctted_loc = self.page.locator('xpath=//*[@id="sloctted"]/div/div[1]/div[2]/span')
         self.fully_slotted_box_loc = self.page.locator( '#IsFullySlottedStandard')
-        self.emergency_key_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/div/div[1]/fieldset[2]/div/label')
+        self.emergency_key_loc = self.page.locator('xpath=//*[@id="emergency"]/div/div[2]/span')
         self.emergency_key_box_loc = self.page.locator( '#PriceEmergencyKeyRelease')
-        self.reverse_colour_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/div/div[2]/fieldset[1]/div/label')
+        self.reverse_colour_loc = self.page.locator('xpath=//*[@id="reversecolour"]/div/div[2]/span')
         self.reverse_colour_box_loc = self.page.locator('#IsReverseColourStandard')
-        self.battery_backup_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/div/div[3]/fieldset[2]/div/label')
+        self.battery_backup_loc = self.page.locator('xpath=//*[@id="battery"]/div/div[3]/span')
         self.attery_backup_box_loc = self.page.locator( '#IsBatteryBackupStandard')
-        self.eco_wifi_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[5]/div/div[2]/fieldset[2]/div/label')
-        self.eco_wifi_box_loc = self.page.locator( '#IsWiFi')
+        self.eco_wifi_loc = self.page.locator( 'xpath=//*[@id="ecowifi"]/div/div[2]/span')
+        self.eco_wifi_box_loc = self.page.locator('#IsWiFi')
 
         '''loc for Opener details'''
-        self.opener_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                             'div[29]/fieldset/label')
+        self.opener_loc = self.page.locator( 'xpath=//*[@id="opener"]/div/div[1]/div[2]/span)
         self.opener_select = self.page.locator( '#Motors')
-        self.handsets_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                               'div[30]/label')
+        self.handsets_loc = self.page.locator( 'xpath=//*[@id="handsets"]/div/div[1]/div[2]/span')
         self.handsets_select = self.page.locator('#Handset')
-        self.wall_btn_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                               'div[31]/label')
+        self.wall_btn_loc = self.page.locator( 'xpath=//*[@id="wallbtn"]/div/div[1]/span')
         self.wall_btn_select = self.page.locator( '#Door_Wall_Button')
-        self.opener_detail_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[32]/fieldset/label')
+        self.opener_detail_loc = self.page.locator( 'xpath=//*[@id="motorsother"]/div/div[2]/span')
         self.opener_detail_box = self.page.locator( '#MotorsOther')
-        self.digital_keypad_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[33]/fieldset/label')
-        self.digital_keypad_select = self.page.locator( '#DigitalKeypad')
-        self.internal_pushbtn_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[34]/fieldset/label')
+        self.digital_keypad_loc = self.page.locator('xpath=//*[@id="keypad"]/div/div[1]')
+        self.digital_keypad_select = self.page.locator('#DigitalKeypad')
+        self.internal_pushbtn_loc = self.page.locator('xpath=//*[@id="pushbtn"]/div/div[2]')
         self.internal_pushbtn_select = self.page.locator( '#InternalPushButton')
-        self.pe_beam_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                              'div[35]/label')
+        self.pe_beam_loc = self.page.locator( 'xpath=//*[@id="pe_beam"]/div/div[2]/span')
         self.pe_beam_select = self.page.locator('#PEBeamGeneral')
-        self.pe_beam_sets_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/'
-                                                   'div[4]/div[36]/label')
+        self.pe_beam_sets_loc = self.page.locator( 'xpath=//*[@id="beam_sets"]/div/div[2]/span')
         self.pe_beam_sets_select = self.page.locator( '#PEBeamSetsGeneral')
-        self.keys_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/'
-                                           'div[37]/fieldset/label')
-        self.keys_select = self.page.locator( '#Keys')
+        self.keys_loc = self.page.locator( 'xpath=//*[@id="keys"]/div/div[2]/span')
+        self.keys_select = self.page.locator('#Keys')
 
         '''loc for other elements details '''
-        self.weight_added_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[39]/fieldset/label')
+        self.weight_added_loc = self.page.locator("label[for='WeightBeingAdded']")
         self.weight_added_select = ('#WeightAddedStandard')
-        self.seals_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[38]/div/div[1]/label')
+        self.seals_loc = self.page.locator("label[for='CustomSeals']")
         self.seals_select = self.page.locator('#Seals')
-        self.dealer_seals2500_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[38]/div/div[2]/fieldset/label')
-        self.dealer_seals3000_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[38]/div/div[3]/fieldset/label')
-        self.hang_door_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[40]/fieldset/label')
-        self.hang_door_select = self.page.locator( '#hang_door_from_standard_part')
-        self.lintel_type_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[41]/fieldset/label')
-        self.lintel_type_select = self.page.locator( '#LintelType')
-        self.fixing_type_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[42]/fieldset/label')
-        self.fixing_type_select = self.page.locator( '#fixing_type_standard_part')
-        self.ibeam_noggins_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[43]/fieldset/label')
-        self.ibeam_noggins_select = self.page.locator( '#noggins_standard_part')
-        self.remove_dispose_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[44]/fieldset/label')
-        self.remove_dispose_select = self.page.locator( '#RemoveAndDispose')
-        self.job_status_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/'
-                                                 'div[4]/div[45]/label')
+        self.dealer_seals2500_loc = self.page.locator("label[for='CustomSeals2500']")
+        self.dealer_seals3000_loc = self.page.locator("label[for='CustomSeals3000']")
+        self.hang_door_loc = self.page.locator("label[for='CustomHangDoorFrom']")
+        self.hang_door_select = self.page.locator('#hang_door_from_standard_part')
+        self.lintel_type_loc = self.page.locator("label[for='CustomLintelType']")
+        self.lintel_type_select = self.page.locator('#LintelType')
+        self.fixing_type_loc = self.page.locator("label[for='CustomFixingType']")
+        self.fixing_type_select = self.page.locator('#fixing_type_standard_part')
+        self.ibeam_noggins_loc = self.page.locator("label[for='CustomIBeamNoggins']")
+        self.ibeam_noggins_select = self.page.locator('#noggins_standard_part')
+        self.remove_dispose_loc = self.page.locator("label[for='RemoveDispose']")
+        self.remove_dispose_select = self.page.locator('#RemoveAndDispose')
+        self.job_status_loc = self.page.locator("label[for='JobStatus']")
         self.job_status_select = self.page.locator( '#JobStatusId')
-        self.expected_deliverydate_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[46]/fieldset/label')
+        self.expected_deliverydate_loc = self.page.locator("label[for='DeliveryDate']")
         self.expected_deliverydate_box = self.page.locator( '#ExpectedDeliveryDate')
-        self.cut_date_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[47]/fieldset/label')
+        self.cut_date_loc = self.page.locator("label[for='CutDate']")
         self.cut_date_box = self.page.locator( '#CutDate')
-        self.paint_date_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[48]/fieldset/label')
-        self.paint_date_box = self.page.locator( '#PaintDate')
-        self.qc_date_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[49]/fieldset/label')
+        self.paint_date_loc = self.page.locator("label[for='PaintDate']")
+        self.qc_date_loc = self.page.locator("label[for='QcDate']")
         self.qc_date_box = self.page.locator( '#QCDate')
-        self.other_date_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[4]/div[50]/fieldset/label')
+        self.other_date_loc = self.page.locator("label[for='OtherDate']")
         self.other_date_box = self.page.locator('#OtherDate')
 
         '''loc for additional infomation details '''
-        self.additional_info_loc = self.page.locator(
-         'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[7]/div/fieldset/label')
-        self.additional_info_box = self.page.locator( '#AdditionalInfo')
-        self.production_notes_loc = self.page.locator(
-        'xpath=/html/body/div[3]/div[2]/div[2]/div/div/div/form/div[1]/div[8]/div/fieldset/label')
-        self.production_notes_box = self.page.locator( '#ProductionNotes')
+        self.additional_info_loc = self.page.locator("label[for='AdditionalInfo']")
+        self.additional_info_box = self.page.locator('#AdditionalInfo')
+        self.production_notes_loc = self.page.locator("label[for='ProductionNotes']")
+        self.production_notes_box = self.page.locator('#ProductionNotes')
 
     def go_addstandarddoor(self):
         '''Open the Add Standard Door from Quote Page'''

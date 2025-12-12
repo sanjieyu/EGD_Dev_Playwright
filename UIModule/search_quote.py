@@ -13,45 +13,30 @@ class Search_Quote(Admin_Page):
 
     def _init_locators_search_quote(self):
         '''loc for default values in this page'''
-        self.searchquote_title_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/h1')
-        self.quotes_sub_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/ul/li[1]/a')
-        self.doors_sub_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div/div/div/form/ul/li[2]/a')
-        self.searchresult_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/h4')
+        self.searchquote_title_loc = self.page.locator("[name='searchquote']")
+        self.quotes_sub_loc = self.page.locator("[aria-label='quotes_sub']")
+        self.doors_sub_loc = self.page.locator("[aria-label='doors_sub']")
+        self.searchresult_loc = self.page.locator("[aria-label='search_result']")
 
         '''loc for default values in "Quotes" section'''
-        self.date_range_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                'div[1]/div[1]/h4')
-        self.client_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                    'div[2]/div[1]/h4')
-        self.quote_info_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                'div[3]/div[1]/h4')
+        self.date_range_loc = self.page.locator("[aria-label='date_range']")
+        self.client_details_loc = self.page.locator("[aria-label='client_details']")
+        self.quote_info_loc = self.page.locator("[aria-label='quote_info']")
         self.searchquotes_btn_loc = self.page.locator('#btnSearchQuote')
-        self.filter_date_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                 'div[1]/div[2]/label')
-        self.user_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/div[1]/'
-                                          'div[3]/label')
+        self.filter_date_loc = self.page.locator("[aria-label='filter_date']")
+        self.user_loc = self.page.locator("[aria-label='user']")
         self.user_box_loc = self.page.locator('xpath=//*[@id="UserAssignedId"]')
-        self.quote_status_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                   'div[1]/div[4]/label')
-        self.client_name_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                  'div[2]/div[2]/label')
-        self.contact_number_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                    'div[2]/div[3]/label')
-        self.suburb_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/div[2]/'
-                                            'div[4]/label')
-        self.postcode_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                              'div[2]/div[5]/label')
+        self.quote_status_loc = self.page.locator("[aria-label='quote_status']")
+        self.client_name_loc = self.page.locator("[aria-label='client_name']")
+        self.contact_number_loc = self.page.locator("[aria-label='contact_number']")
+        self.suburb_loc = self.page.locator("[aria-label='suburb']")
+        self.postcode_loc = self.page.locator("[aria-label='postcode']")
 
-        self.proposal_no_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                  'div[3]/div[2]/label')
-        self.door_design_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                 'div[3]/div[3]/label')
-        self.colour_category_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                     'div[3]/div[4]/label')
-        self.door_colour_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                 'div[3]/div[5]/label')
-        self.site_address_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[1]/div/'
-                                                   'div[3]/div[6]/label')
+        self.proposal_no_loc = self.page.locator("[aria-label='proposal_no']")
+        self.door_design_loc = self.page.locator("[aria-label='door_design']")
+        self.colour_category_loc = self.page.locator("[aria-label='colour_category']")
+        self.door_colour_loc = self.page.locator("[aria-label='door_colour']")
+        self.site_address_loc = self.page.locator("[aria-label='site_address']")
 
         '''Input box for each filter'''
         self.clientname_box_loc = self.page.locator('#ClientName')
@@ -59,14 +44,13 @@ class Search_Quote(Admin_Page):
         self.contact_num_box_loc = self.page.locator('#Contact_Number')
         self.suburb_box_loc = self.page.locator('#Suburb')
         self.postcode_box_loc = self.page.locator('#Postcode')
-        self.door_design_select_loc = self.page.locator( '#DoorDesign')
-        self.door_colour_select_loc = self.page.locator( '#DoorColor')
-        self.door_category_select_loc = self.page.locator( '#ColourCategory')
+        self.door_design_select_loc = self.page.locator('#DoorDesign')
+        self.door_colour_select_loc = self.page.locator('#DoorColor')
+        self.door_category_select_loc = self.page.locator('#ColourCategory')
         self.site_address_box_loc = self.page.locator('#SiteAddress')
 
         '''search by client name'''
-        self.proposalno_searched_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/div/div/div/div/'
-                                                         'div/table/tbody/tr/td[2]/a')
+        self.proposalno_searched_loc = self.page.locator("[aria-label='proposalno_searched']")
 
 
     def go_searchquotes(self):

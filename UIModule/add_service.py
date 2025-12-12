@@ -12,70 +12,54 @@ class Add_Service(Admin_Page):
         self._init_locators_add_service()
 
     def _init_locators_add_service(self):
-        self.search_service_title_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/h1')  # new added
-        self.search_service_loc = self.page.locator('xpath=/html/body/div[2]/div/div[2]/ul/li[2]/ul/li[2]/ul/li[1]/a')
-        self.add_new_service_btn = self.page.locator('xpath=/html/body/div[3]/div[2]/div/div/div/form/div/div/div[2]/'
-                                                     'div/div[4]/div/a')
-        self.success_confirm_btn = self.page.locator('xpath=/html/body/div[8]/div/div[6]/button[1]')
+        self.search_service_title_loc = self.page.locator('xpath=//*[@id="serviceTitle"]/div/div[1]/span')  # new added
+        self.search_service_loc = self.page.locator('xpath=//*[@id="serviceId"]/div/div[2]/span')
+        self.add_new_service_btn = self.page.locator('#btnServiceAdd')
+        self.success_confirm_btn = self.page.locator('#btnServiceConfirm')
 
         '''loc for each section in this page'''
-        self.doors_section_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/h1[1]')
-        self.service_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/h1[2]')
-        self.site_contact_details_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[3]/h1')
-        self.service_item_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/h1[3]')
-        self.service_documents_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/h1[4]')
+        self.doors_section_loc = self.page.locator("[aria-label='doorsection']")
+        self.service_details_loc = self.page.locator("[aria-label='servicedetails']")
+        self.site_contact_details_loc = self.page.locator("[aria-label='sitecontact']")
+        self.service_item_loc = self.page.locator("[aria-label='serviceitem']")
+        self.service_documents_loc = self.page.locator("[aria-label='document']")
         self.back_service_btn = self.page.locator('#btnBackToQuote')
-        self.save_service_btn = self.page.locator( '#btnSaveService')
-        self.add_service_item_btn = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[4]/div/div/'
-                                                       'div[2]/a')
-        self.add_attachement_btn_loc = self.page.locator( '#servicenewfiles')
+        self.save_service_btn = self.page.locator('#btnSaveService')
+        self.add_service_item_btn = self.page.locator('#btnServiceItem')
+        self.add_attachement_btn_loc = self.page.locator('#servicenewfiles')
 
         '''loc for each element in "Doors" section"'''
-        self.door_type_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[1]/div/div/div[1]/'
-                                               'fieldset/label')
+        self.door_type_loc = self.page.locator("[aria-label='doortype']")
         self.door_type_select = self.page.locator( '#serviceDoorType')
-        self.additional_info_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[1]/div/div/'
-                                                     'div[2]/label')
+        self.additional_info_loc = self.page.locator("[aria-label='additionalinfo']")
         self.additional_info_box = self.page.locator('#serviceAdditionalDoorInfo')
 
         '''loc for each element in "Service Details" section"'''
-        self.service_type_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[1]/'
-                                                  'label')
+        self.service_type_loc = self.page.locator("[aria-label='servicetype']")
         self.service_type_select = self.page.locator('#serviceSupplyType')
-        self.service_area_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[2]/'
-                                                   'label')
+        self.service_area_loc = self.page.locator("[aria-label='servicearea']")
         self.service_area_select = self.page.locator('#serviceTypeValue')
-        self.service_status_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[3]/'
-                                                    'label')
+        self.service_status_loc = self.page.locator("[aria-label='status']")
         self.service_status_select = self.page.locator('#serviceStatusId')
-        self.invoice_no_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[4]/'
-                                                'label')
+        self.invoice_no_loc = self.page.locator("[aria-label='invoice']")
         self.invoice_no_box = self.page.locator('#serviceInvoiceNo')
-        self.account_type_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[5]/'
-                                                  'label')
+        self.account_type_loc = self.page.locator("[aria-label='accountype']")
         self.account_type_select = self.page.locator('#servicePaymentTypeId')
-        self.account_customer_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/'
-                                                       'div[6]/label')
+        self.account_customer_loc = self.page.locator("[aria-label='accountcustomer']")
         self.account_customer_select = self.page.locator( '#serviceAccountCustomer')
-        self.order_date_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[7]/'
-                                                'label')
+        self.order_date_loc = self.page.locator("[aria-label='orderdate']")
         self.order_date_filter = self.page.locator('#serviceOrderDate')
-        self.service_date_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[8]/'
-                                                   'label')
+        self.service_date_loc = self.page.locator("[aria-label='servicedate']")
         self.service_date_filter = self.page.locator( '#serviceServiceDate')
-        self.customer_po_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[9]/'
-                                                 'label')
+        self.customer_po_loc = self.page.locator("[aria-label='customerpo']")
         self.customer_po_box = self.page.locator( '#serviceCustomerPO')
-        self.user_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[10]/label')
+        self.user_loc = self.page.locator("[aria-label='userid']")
         self.user_select = self.page.locator( '#serviceUserAssigned')
-        self.service_tech_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[11]/'
-                                                  'label')
+        self.service_tech_loc = self.page.locator("[aria-label='servicetech']")
         self.service_tech_select = self.page.locator('#serviceInstaller')
-        self.service_tech_name_loc = self.page.locator( 'xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/'
-                                                        'div[12]/label')
+        self.service_tech_name_loc = self.page.locator("[aria-label='techname']")
         self.service_tech_name_box = self.page.locator('#serviceTechName')
-        self.description_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div[13]/'
-                                                 'label')
+        self.description_loc = self.page.locator("[aria-label='description']")
         self.description_box = self.page.locator('#serviceDescription')
 
         '''loc for each element in "Site Contact Details" section"'''

@@ -12,73 +12,53 @@ class Add_Quote(Admin_Page):
         self._init_locators_add_quote()
 
     def _init_locators_add_quote(self):
-        self.main_page_loc1 = self.page.locator('xpath=//*[@id="main"]')
-        self.main_page_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]')
+
+        self.main_page_loc = self.page.locator('xpath=//*[@id="main"]')
 
         '''loc for each section in this page'''
-        self.proposal_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/h1[1]')
-        self.contact_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/h1[2]')
-        self.site_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/h1[3]')
-        self.doors_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/fieldset/h1')
-        self.add_door_btn = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/fieldset/div/div/div[3]/div/'
-                                              'button')
+        self.proposal_details_loc = self.page.locator("[name='proposalinfo']")
+        self.contact_details_loc = self.page.locator("[name='contactinfo']")
+        self.site_details_loc = self.page.locator("[name='siteinfo']")
+        self.doors_loc = self.page.locator("[aria-label='doors']")
+        self.add_door_btn = self.page.locator('#btnAddQuote')
         self.save_quote_btn = self.page.locator('#btnSaveQuote')
-        self.proceed_quote_btn = self.page.locator( '#btnProceedFinal')
+        self.proceed_quote_btn = self.page.locator('#btnProceedFinal')
 
         '''Quote Sucessfully modified popup'''
-        self.proceed_ok_btn_loc = self.page.locator('xpath=/html/body/div[84]/div/div[6]/button[1]')
-        self.save_ok_btn_loc = self.page.locator('xpath=html/body/div[86]/div/div[6]/button[1]')
+        self.proceed_ok_btn_loc = self.page.locator('#btnProceedOk')
+        self.save_ok_btn_loc = self.page.locator('#btnSaveOk')
 
         '''loc for each element in "Proposal Details" section'''
-        self.proposal_num_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                  'div[1]/div[1]/label')
-        self.pricing_cate_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                  'div[1]/div[2]/fieldset/label')
-        self.user_quote_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                'div[1]/div[3]/label')
-        self.account_type_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                  'div[2]/div[1]/label')
-        self.order_date_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                'div[2]/div[2]/label')
-        self.quote_status_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                  'fieldset/div/div[3]/label')
-        self.account_customer_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/'
-                                                      'fieldset/fieldset/div/div[1]/label')
-        self.supply_type_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/fieldset/'
-                                                 'fieldset/div/div[2]/label')
-        self.proplsal_num_box = self.page.locator( '#ProposalNo')
+        self.proposal_num_loc = self.page.locator("[name='proposalnum']")
+        self.pricing_cate_loc = self.page.locator("[name='pricingcate']")
+        self.user_quote_loc = self.page.locator("[name='userquote']")
+        self.account_type_loc = self.page.locator("[name='accounttype']")
+        self.order_date_loc = self.page.locator("[name='orderdate']")
+        self.quote_status_loc = self.page.locator("[name='quotestatus']")
+        self.account_customer_loc = self.page.locator("[name='accountname']")
+        self.supply_type_loc = self.page.locator("[name='supplytype']")
+        self.proplsal_num_box = self.page.locator('#ProposalNo')
         self.pricing_cate_select = self.page.locator('#PricingCategoryId')
         self.user_quote_select = self.page.locator('#UserAssignedId')
         self.account_type_select = self.page.locator('#PaymentTypeId')
         self.order_date_select = self.page.locator('#OrderDate')
         self.quote_status_select = self.page.locator( '#QuoteStatusId')
-        self.account_customer_btn = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/'
-                                                      'fieldset/fieldset/div/div[1]/span/a')
-        self.propertygroup_customer_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[1]/'
-                                                            'fieldset/fieldset/div/div[1]/ul/li[864]/a')
+        self.account_customer_btn = self.page.locator("#btnAccountk")
+        self.propertygroup_customer_loc = self.page.locator("[name='propertygroup']")
         self.account_customer_select1 = self.page.locator('#account_customer_list_part')
-        self.account_customer_select = self.page.locator( 'xpath=//*[@id="accountCustomerData"]/div/div[1]/span')
+        self.account_customer_select = self.page.locator('xpath=//*[@id="accountCustomerData"]/div/div[1]/span')
         self.supply_type_select = self.page.locator('#SupplyTypeId')
 
         '''loc for each element in "Client Contact Details" section'''
-        self.client_contact_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/'
-                                                            'h3[1]/span')
-        self.client_name_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                 'div[1]/div[1]/label')
-        self.customer_purchase_order_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/'
-                                                             'fieldset/div[1]/div[2]/label')
-        self.contact_name_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                  'div[2]/div[1]/label')
-        self.contact_mobile_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                    'div[2]/div[2]/label')
-        self.contact_email_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                   'div[2]/div[3]/label')
-        self.contact_address_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                     'div[3]/div[1]/label')
-        self.contact_suburb_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                    'div[3]/div[2]/label')
-        self.contact_postcode_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/fieldset/'
-                                                      'div[3]/div[3]/label')
+        self.client_contact_details_loc = self.page.locator('xpath=//*[@id="clientContact"]/div/div[2]/span')
+        self.client_name_loc = self.page.locator('xpath=//*[@id="clientName"]/div/div[3]/span')
+        self.customer_purchase_order_loc = self.page.locator('xpath=//*[@id="purchaseOrder"]/div/div[4]/span')
+        self.contact_name_loc = self.page.locator('xpath=//*[@id="contactName"]/div/div[5]/span')
+        self.contact_mobile_loc = self.page.locator('xpath=//*[@id="contactMobile"]/div/div[6]/span')
+        self.contact_email_loc = self.page.locator('xpath=//*[@id="contactEmail"]/div/div[7]/span')
+        self.contact_address_loc = self.page.locator('xpath=//*[@id="contactAddress"]/div/div[8]/span')
+        self.contact_suburb_loc = self.page.locator('xpath=//*[@id="contactSuburb"]/div/div[9]/span')
+        self.contact_postcode_loc = self.page.locator('xpath=//*[@id="contactPostcode"]/div/div[10]/span')
 
         self.client_name_box = self.page.locator( '#ClientName')
         self.order_num_box = self.page.locator( '#ClientPurchaseOrderNumber')
@@ -90,22 +70,14 @@ class Add_Quote(Admin_Page):
         self.contact_postcode_box = self.page.locator('#ContactPostcode')
 
         '''loc for each element in "Site Contact Details" section'''
-        self.site_contact_details_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/'
-                                                          'h3[2]/span')
-        self.copy_client_details = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/'
-                                                     'div[1]/div/label/b')
-        self.site_contact_name = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/div[2]/'
-                                                   'fieldset/div[1]/label')
-        self.site_phone_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/div[2]/'
-                                                'fieldset/div[2]/div[1]/label')
-        self.site_email_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/div[2]/'
-                                                'fieldset/div[2]/div[2]/label')
-        self.site_address_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/div[2]/'
-                                                  'fieldset/div[3]/label')
-        self.site_suburb_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/div[2]/'
-                                                 'fieldset/div[4]/div[1]/label')
-        self.site_postcode_loc = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/form/div/div[2]/div/div[2]/'
-                                                   'fieldset/div[4]/div[2]/label')
+        self.site_contact_details_loc = self.page.locator('xpath=//*[@id="siteContact"]/div/div[2]/span')
+        self.copy_client_details = self.page.locator('xpath=//*[@id="siteDetail"]/div/div[3]/span')
+        self.site_contact_name = self.page.locator('xpath=//*[@id="siteName"]/div/div[4]/span')
+        self.site_phone_loc = self.page.locator('xpath=//*[@id="siteMobile"]/div/div[5]/span')
+        self.site_email_loc = self.page.locator('xpath=//*[@id="sitetEmail"]/div/div[6]/span')
+        self.site_address_loc = self.page.locator('xpath=//*[@id="siteAddress"]/div/div[7]/span')
+        self.site_suburb_loc = self.page.locator('xpath=//*[@id="siteSuburb"]/div/div[9]/span')
+        self.site_postcode_loc = self.page.locator('xpath=//*[@id="sitePostcode"]/div/div[10]/span')
 
         self.copy_checkbox_loc = self.page.locator('#chkcopyclientdetails')
         self.site_contactname_box = self.page.locator( '#SiteContactName')
@@ -116,8 +88,7 @@ class Add_Quote(Admin_Page):
         self.site_postcode_box = self.page.locator( '#SitePostcode')
 
         '''loc for Doors'''
-        self.add_door_btn = self.page.locator('xpath=/html/body/div[3]/div[2]/div[1]/div/fieldset/div/div/div[3]/div/'
-                                              'button')
+        self.add_door_btn = self.page.locator('#btnAddDoor')
         self.add_door_menu = self.page.locator('.dropdown-menu')    # 用class name定位，前面加.
 
         '''loc for Valication page'''
