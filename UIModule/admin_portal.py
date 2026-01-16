@@ -123,7 +123,8 @@ if __name__ == '__main__':
 
     with sync_playwright() as p:
         browser = p.firefox.launch(headless=False)
-        page = browser.new_page(viewport={"width": 2560, "height": 1440})
+        context = browser.new_context(viewport={"width": 2560, "height": 1440}, ignore_https_errors=True)
+        page = context.new_page()
         page.goto("http:// ")
         login = Admin_Page(page)
         login.typeUserName('aabb')
