@@ -13,7 +13,8 @@ class TestAddCustomDoor(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.playwright = sync_playwright().start()
         cls.browser = cls.playwright.firefox.launch(headless=False)
-        cls.page = cls.browser.new_page(viewport={"width": 2048, "height": 1152})
+        cls.context = cls.browser.new_context(viewport={"width": 2560, "height": 1440}, ignore_https_errors=True)
+        cls.page = cls.context.new_page()
         cls.config_read = ReadConfig()
         cls.url = cls.config_read.get_url()
         cls.username = cls.config_read.admin_username()
@@ -29,6 +30,7 @@ class TestAddCustomDoor(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) -> None:
         cls.page.close()
+        cls.context.close()
         cls.browser.close()
         cls.playwright.stop()
 

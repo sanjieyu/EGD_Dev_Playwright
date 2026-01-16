@@ -13,7 +13,8 @@ class TestCustomDoor(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.playwright = sync_playwright().start()
         cls.browser = cls.playwright.firefox.launch(headless=False)
-        cls.page = cls.browser.new_page(viewport={"width": 2560, "height": 1440})
+        cls.context = cls.browser.new_context(viewport={"width": 2560, "height": 1440}, ignore_https_errors=True)
+        cls.page = cls.context.new_page()
         cls.config_read = ReadConfig()
         cls.url = cls.config_read.get_url()
         cls.username = cls.config_read.admin_username()
@@ -29,6 +30,7 @@ class TestCustomDoor(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) -> None:
         cls.page.close()
+        cls.context.close()
         cls.browser.close()
         cls.playwright.stop()
 
@@ -49,7 +51,6 @@ class TestCustomDoor(unittest.TestCase):
     def test_add_customdoor_ui_007(self):
         '''Verify the Door Colour dropdown if select "OliColour" in Colour Category '''
         self.assertEqual(('Please SelectBlack AshClearCustomSela BrownTBA'), self.custom_door.check_door_colour_oilcolour)
-
 
     def test_add_customdoor_ui_010(self):
             '''Verify the Door Colour dropdown if select "SealedColour" in Colour Category '''

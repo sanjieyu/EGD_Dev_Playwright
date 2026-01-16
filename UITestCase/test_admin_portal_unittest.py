@@ -14,7 +14,8 @@ class TestAdminPortal(unittest.TestCase):
         """setup"""
         cls.playwright = sync_playwright().start()
         cls.browser = cls.playwright.firefox.launch(headless=False)
-        cls.page = cls.browser.new_page(viewport={"width": 2560, "height": 1600})
+        cls.context = cls.browser.new_context(viewport={"width": 2560, "height": 1440}, ignore_https_errors=True)
+        cls.page = cls.context.new_page()
         cls. config_read = ReadConfig()
         cls. url = cls.config_read.get_url()
         cls. admin_username = cls.config_read.admin_username()
@@ -25,23 +26,11 @@ class TestAdminPortal(unittest.TestCase):
         cls.admin_page.typePassword(cls.admin_password)
         cls.admin_page.clicklogin()
 
-    # def setUp(self) -> None:
-    #     """setup """
-    #     self.page = self.browser.new_page(viewport={"width": 2560, "height": 1600})
-    #     self.admin_page = Admin_Page(self.page)
-    #     self.page.goto("http://egd2.sighte.com/")
-    #     self.admin_page.typeUserName('ysun@ecogaragedoors.com.au')
-    #     self.admin_page.typePassword('Tims@123')
-    #     self.admin_page.clicklogin()
-
-    # def tearDown(self) -> None:
-    #     """teardown""
-    #     self.page.close()
-
     @classmethod
     def tearDownClass(cls) -> None:
         """teardown """
         cls.page.close()
+        cls.context.close()
         cls.browser.close()
         cls.playwright.stop()
 

@@ -13,9 +13,9 @@ class TestAdminPortal:
     def setup(self,page:Page):
         self.page = page
         self.admin_page = Admin_Page(page)
-        page.goto("http://egd2.sighte.com/")
-        self.admin_page.typeUserName('ysun@ecogaragedoors.com.au')
-        self.admin_page.typePassword('Tims@123')
+        page.goto("http://test")
+        self.admin_page.typeUserName('test')
+        self.admin_page.typePassword('test@123')
         self.admin_page.clicklogin()
 
     def test_get_url(self):
